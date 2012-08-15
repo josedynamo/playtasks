@@ -21,6 +21,6 @@ public class TaskTest {
 				assertThat(task.Id).isNotNull();
 			}
 		});
-	}
+	}	
 
 }
