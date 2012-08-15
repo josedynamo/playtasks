@@ -5,6 +5,6 @@ target
 tmp
 .history
 .project
-.settings
+.settings/
 .classpath
 dist
