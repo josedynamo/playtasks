@@ -23,6 +23,14 @@ public class Task extends Model {
 	public String Id;
 	
 	
+	public String getId() {
+		return Id;
+	}
+
+	public void setId(String id) {
+		Id = id;
+	}
+
 	@Required
 	public String contents;
 

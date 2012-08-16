@@ -1,15 +1,18 @@
 package controllers;
 
+import play.*;
+
 import static play.libs.Json.toJson;
 
 import java.util.List;
 
 import models.Task;
-import play.data.Form;
-import play.db.ebean.Model;
-import play.mvc.Controller;
-import play.mvc.Result;
-import views.html.index;
+import play.data.*;
+import play.db.*;
+import play.db.ebean.*;
+import play.mvc.*;
+
+import views.html.*;
 
 public class Application extends Controller {
 	final static Form<Task> taskForm = form(Task.class);
@@ -20,7 +23,7 @@ public class Application extends Controller {
 
 	public static Result addTask() {
 
-		Form<Task> filledForm = taskForm.bindFromRequest();
+		Form<Task> filledForm = form(Task.class).bindFromRequest();
 		if (filledForm.hasErrors()) {
 			return badRequest(index.render("Task Error", taskForm));
 		} else {
